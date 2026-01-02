@@ -21,6 +21,12 @@ class ProductController extends Controller
     	return view('admin.product.index', compact('products'));
     }
 
+     public function addOn()
+    {
+	    $products = Product::with('brand', 'category')->get();
+    	return view('admin.product.index', compact('products'));
+    }
+
     
     public function create_Page()
     {
