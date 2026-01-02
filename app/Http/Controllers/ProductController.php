@@ -15,11 +15,13 @@ class ProductController extends Controller
     	return view('admin.product.index', compact('products'));
     }
 
-    public function getData()
+    public function sources()
     {
 	    $products = Product::with('brand', 'category')->get();
     	return view('admin.product.index', compact('products'));
     }
+
+    
     public function create_Page()
     {
         $brands = Brand::all();
